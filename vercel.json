@@ -7,11 +7,12 @@
       }
     ],
     "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "your-entry-point.js"
-      }
-    ],
+        {
+          "src": "/(.*)",
+          "dest": "src/index.js"
+        }
+      ]
+    ,
     "env": {
       "MONGODB_URI": "mongodb+srv://abhinavsunilvra59:12345@cluster0.dyilzjg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
     }
