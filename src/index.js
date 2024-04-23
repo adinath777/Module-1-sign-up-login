@@ -90,10 +90,6 @@ const isAuthenticated = (req, res, next) => {
   }
 };
 
-app.get('*.html', (req, res, next) => {
-  const requestedPath = req.path.replace('.html', '.hbs');
-  res.redirect(requestedPath);
-});
 
 
 app.get('/', async (req, res) => {
