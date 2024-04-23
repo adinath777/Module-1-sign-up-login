@@ -90,6 +90,15 @@ const isAuthenticated = (req, res, next) => {
   }
 };
 
+app.get('*.html', (req, res, next) => {
+  const requestedPath = req.path.replace('.html', '.hbs');
+  res.redirect(requestedPath);
+});
+app.get('*.hbs', (req, res) => {
+  // Render your HBS template
+  res.render(req.path.replace('.hbs', ''));
+});
+
 app.get('/', async (req, res) => {
   try {
     const now = new Date();
