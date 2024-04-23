@@ -1,0 +1,166 @@
+<style>
+    /* Basic styling */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        height: 100%;
+        margin: 0;
+        background-color: #f8f8f8;
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #ffffff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+    }
+
+    h1 {
+        text-align: center;
+        color: #333333;
+        margin-bottom: 30px;
+    }
+
+    h2 {
+        text-align: center;
+        color: #555555;
+        margin-bottom: 20px;
+    }
+
+    .currentdetails {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .currentdetails p {
+        color: #666666;
+        margin: 5px 0;
+    }
+
+    form {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f8f8f8;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+        color: #555555;
+        font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        box-sizing: border-box;
+        border: 1px solid #cccccc;
+        border-radius: 3px;
+    }
+
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 3px;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+</style>
+
+<script>
+    const popupMessage = '{{popupMessage}}';
+    if (popupMessage) {
+        alert(popupMessage);
+    }
+</script>
+
+<div class="container">
+    <body>
+        <input type="hidden" id="isProfileFilled" name="isProfileFilled" value="{{isProfileFilled}}">
+        <h1>User Profile</h1>
+
+        <div class="currentdetails">
+            <h2>Your Details</h2>
+            {{#if user.firstName}}
+            <p>Name: {{user.firstName}} {{user.lastName}}</p>
+            <p>Email: {{user.email}}</p>
+            <p>Phone: {{user.phone}}</p>
+            <p>Address: {{user.address}}</p>
+            <p>Bio: {{user.bio}}</p>
+            {{else}}
+            <p>No details available.</p>
+            {{/if}}
+        </div>
+
+        <!-- Trigger/Open The Modal -->
+        <button id="editProfileBtn">Edit Profile</button>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal" style="display: none;">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <form action="/sellerprofile" method="POST">
+                    <label for="name">First Name:</label>
+                    <input type="text" id="name" name="firstName" placeholder="Enter your First name" value="{{user.firstName}}">
+
+                    <label for="name">Last Name:</label>
+                    <input type="text" id="name" name="lastName" placeholder="Enter your Last name" value="{{user.lastName}}">
+
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your Phone number" value="{{user.phone}}">
+
+                    <label for="address">Address:</label>
+                    <textarea id="address" name="address" placeholder="Enter your Address">{{user.address}}</textarea>
+
+                    <label for="bio">Bio:</label>
+                    <textarea id="bio" name="bio" placeholder="Enter your bio">{{user.bio}}</textarea>
+
+                    <!-- Add more form fields as needed -->
+
+                    <button type="submit">Save Changes</button>
+                    <button type="button" id="closeModalBtn">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</div>
+
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens/closes the modal
+    var editProfileBtn = document.getElementById("editProfileBtn");
+    var closeModalBtn = document.getElementById("closeModalBtn");
+
+    // When the user clicks the "Edit Profile" button, open the modal
+    editProfileBtn.onclick = function () {
+        modal.style.display = (modal.style.display === "block") ? "none" : "block";
+    }
+
+    // When the user clicks the "Cancel" button, close the modal
+    closeModalBtn.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>

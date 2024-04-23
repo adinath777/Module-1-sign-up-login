@@ -1,0 +1,59 @@
+<style>
+  .card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  width: 300px;
+  margin: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  margin-bottom: 20px;
+}
+</style>
+<div class="card-container">
+  {{#each wonProducts}}
+    <div class="card">
+      <img src="/uploads/{{this.images.[0]}}" alt="{{this.productname}}" class="card-img">
+      <div class="card-body">
+        <h3 class="card-title">{{this.productname}}</h3>
+        <p class="card-text">Winning Bid Amount: {{this.highestBid}}</p>
+        <h4>Seller Details:</h4>
+        {{#if this.seller}}
+          <p>Name: {{this.seller.firstName}} {{this.seller.lastName}}</p>
+          <p>Address: {{this.seller.address}}</p>
+          <p>Phone: {{this.seller.phone}}</p>
+          <p>Email: {{this.seller.email}}</p>
+        {{else}}
+          <p>Seller details not available</p>
+        {{/if}}
+      </div>
+    </div>
+  {{/each}}
+</div>

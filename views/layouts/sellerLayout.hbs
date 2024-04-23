@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seller Dashboard</title>
+    <style>
+      /* Reset some default styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      header {
+        background: linear-gradient(to right, #05014d, #476bc7); 
+        color: #fff;
+        text-align: center;
+        padding: 50px 0;
+      }
+      nav ul {
+        list-style-type: none;
+         background: linear-gradient(to right, #05014d, #476bc7); 
+        overflow: hidden;
+        display: flex;
+        justify-content: space-between;
+      }
+      nav ul li {
+        float: left;
+      }
+      nav ul li a {
+        display: block;
+        padding: 10px 20px;
+        color: #fff;
+        text-decoration: none;
+      }
+      nav ul li a:hover {
+        background-color: #040102;
+      }
+      .products {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+      .product {
+        width: 30%;
+        margin-bottom: 20px;
+        padding: 20px;
+        border: 1px solid #ccc;
+        text-align: center;
+      }
+      .product img {
+        width: 100%;
+        max-height: 200px;
+        object-fit: cover;
+      }
+      button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+
+      body {
+        background-color: #eee;
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .product-row {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -10px;
+      }
+      .card {
+        background-color: #fff;
+        border: none;
+        border-radius: 10px;
+        width: 190px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        margin: 10px;
+      }
+      .image-container {
+        position: relative;
+      }
+      .thumbnail-image {
+        border-radius: 10px !important;
+        width: 190px;
+        height: 150px;
+      }
+      .stock {
+        background-color: red;
+        padding: 2px 4px;
+        font-size: 10px;
+        border-radius: 6px;
+        color: #fff;
+      }
+      .productID {
+        height: 25px;
+        width: 25px;
+        font-size: 8px;
+        font-weight: bold;
+        background-color: #eee;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+      .first {
+        position: absolute;
+        width: 100%;
+        padding: 9px;
+      }
+      .car-name {
+        font-size: 13px;
+        font-weight: bold;
+        width: 60%;
+      }
+      .see-more {
+        font-size: 12px;
+        color: purple;
+        font-weight: 500;
+      }
+  
+    </style>
+    <script type="module" src="/src/index.js"></script>
+  </head>
+  <body>
+    
+    <header> 
+      <nav>
+
+        <ul>
+          <li><a href="/seller">Dashboard</a></li>
+          <li><a href="/addproducts">Add Products</a></li>
+          <li><a href="/mylisting">My Listing</a></li>
+          <li><a href="/sellerprofile">Profile</a></li>
+          <li><a href="/auctionsended">Auctions ended</a></li>
+          <li><a href="/logout">Logout</a></li>
+          <li style="margin-left: auto"><a href="/buyer">want to Buy?</a></li>
+          
+        </ul>
+      </nav>
+    </header>
+    <main></main>
+    {{{body}}}
+  </body>
+</html>

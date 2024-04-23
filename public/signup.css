@@ -1,0 +1,175 @@
+/* Global styles */
+.gradient-custom {
+ 
+  background-color: hsl(218, 41%, 15%);
+  background-image: radial-gradient(650px circle at 0% 0%, hsl(218, 41%, 35%) 15%, hsl(218, 41%, 30%) 35%, hsl(218, 41%, 20%) 75%, hsl(218, 41%, 19%) 80%, transparent 100%),
+                    radial-gradient(1250px circle at 100% 100%, hsl(218, 41%, 45%) 15%, hsl(218, 41%, 30%) 35%, hsl(218, 41%, 20%) 75%, hsl(218, 41%, 19%) 80%, transparent 100%);
+}
+
+#radius-shape-1 {
+  height: 220px;
+  width: 220px;
+  top: -60px;
+  left: 1090px;
+  background: radial-gradient(#44006b, #ad1fff);
+  overflow: hidden;
+}
+
+#radius-shape-2 {
+  border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+  bottom: -60px;
+  left: -570px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(#44006b, #ad1fff);
+  overflow: hidden;
+}
+
+.suui {
+  color: hsl(218, 41%, 15%);
+}
+
+/* Styles for forms */
+.card-registration {
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-registration .card-body {
+  padding: 2rem;
+}
+
+.form-outline {
+  margin-bottom: 1.5rem;
+}
+
+.form-control {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.form-control:focus {
+  border-color: #ad1fff;
+  box-shadow: 0 0 0 0.2rem rgba(173, 31, 255, 0.25);
+}
+
+.btn-primary {
+  background-color: #ad1fff;
+  border-color: #ad1fff;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #9400e9;
+  border-color: #9400e9;
+}
+
+/* Additional styles for specific forms */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  transition: border-color 0.3s ease;
+  width: 100%;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #ad1fff;
+  box-shadow: 0 0 0 0.2rem rgba(173, 31, 255, 0.25);
+}
+
+.profileform {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.profileform h2 {
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.profileform .form-group {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+.profileform .form-group input,
+.profileform .form-group textarea {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  transition: border-color 0.3s ease;
+  width: 100%;
+}
+
+.profileform .form-group input:focus,
+.profileform .form-group textarea:focus {
+  border-color: #ad1fff;
+  box-shadow: 0 0 0 0.2rem rgba(173, 31, 255, 0.25);
+  outline: none;
+}
+
+.profileform .form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+/* signup.css */
+
+/* Add your custom styles here */
+.card-registration {
+  background-color: #fff; /* Change the background color */
+  color: #333; /* Change the text color */
+  border: 2px solid #ddd; /* Change the border color */
+}
+
+.card-registration .card-body {
+  padding: 2rem; /* Adjust padding as needed */
+}
+
+.form-outline input[type="text"],
+.form-outline input[type="email"],
+.form-outline input[type="password"],
+.form-outline textarea {
+  border-radius: 10px; /* Add border-radius */
+  border: 2px solid #ccc; /* Add border */
+  padding: 0.5rem; /* Adjust padding */
+  width: 100%; /* Make inputs full-width */
+  margin-bottom: 1rem; /* Adjust margin bottom */
+}
+
+.form-outline label {
+  color: #777; /* Change label color */
+}
+
+.form-outline textarea {
+  height: 100px; /* Adjust textarea height */
+}
+
+.btn-primary {
+  background-color: #007bff; /* Change button background color */
+  border: none; /* Remove button border */
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Change button background color on hover */
+}
+

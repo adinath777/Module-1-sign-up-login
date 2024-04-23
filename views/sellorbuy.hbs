@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{pageTitle}}</title>
+    <link rel="stylesheet" href="sellorbuy.css">
+</head>
+<body>
+    <header>
+        <h1>{{Eccobid}}</h1>
+    </header>
+    <div class="container">
+        <h1>{{greeting}}</h1>
+        <h2 class="WELCOME">WELCOME TO ECOBID</h2>
+        <div class="buttons">
+            <button id="sellerButton"><a href="/seller">Seller</a></button>
+            <button id="buyerButton"><a href="/buyer">Buy now</a></button>
+        </div>
+    </div>
+    <div class="slideshow-container">
+  <div class="mySlides fade">
+    <img src="/imagesused/category.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <img src="/imagesused/slogan.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <img src="/imagesused/sustainableworld.jpg" style="width:100%">
+  </div>
+</div>
+    <script>
+        // JavaScript logic to determine the greeting based on Indian time
+        var date = new Date();
+        var hour = date.getHours();
+        var greeting;
+
+        if (hour < 12) {
+            greeting = "Good Morning";
+        } else if (hour < 18) {
+            greeting = "Good Afternoon";
+        } else {
+            greeting = "Good Evening";
+        }
+
+        document.querySelector('h1').textContent = greeting + " {{username}} ";
+
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+         for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+         }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        slides[slideIndex-1].style.display = "block";
+        setTimeout(showSlides, 5000); // Change image every 5 seconds
+        }
+    </script>
+</body>
+</html>

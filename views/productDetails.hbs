@@ -1,0 +1,458 @@
+<style>
+  /* ----- Variables ----- */
+$color-primary: #4c4c4c;
+$color-secondary: #a6a6a6;
+$color-highlight: #ff3f40;
+
+/* ----- Global ----- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  background-color: #f5f5f5;
+}
+
+h1, h2 {
+  color: $color-primary;
+}
+
+h3 {
+  font-size: 0.7em;
+  letter-spacing: 1.2px;
+  color: $color-secondary;
+}
+
+img {
+  max-width: 100%;
+  filter: drop-shadow(1px 1px 3px $color-secondary);
+}
+
+/* ----- Product Section ----- */
+.product-details {
+  display: grid;
+  grid-template-columns: 0.9fr 1fr;
+  margin: auto;
+  padding: 2.5em 0;
+  max-width: 900px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ----- Photo Section ----- */
+/* ----- Photo Section ----- */
+.photo-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  border-radius: 6px;
+  box-shadow: 4px 4px 25px -2px rgba(0, 0, 0, 0.3);
+}
+
+.photo-main {
+  height: 80%;
+  border-radius: 6px 6px 0 0;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.photo-main .image-slide {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.photo-main .image-slide img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.photo-album {
+  height: 20%;
+  padding: 0.7em 1em;
+  border-radius: 0 0 6px 6px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo-album ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo-album li {
+  width: 55px;
+  height: 55px;
+  padding: 7px;
+  border: 1px solid #a6a6a6;
+  border-radius: 3px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.photo-album li:last-child {
+  margin-right: 0;
+}
+
+.photo-album li img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ----- Informations Section ----- */
+.product__info {
+  padding: 0 2em;
+
+  .title {
+    h2 {
+      margin-bottom: 0.1em;
+      font-size: 1.5em;
+      font-weight: 900;
+    }
+  }
+
+  .buy--btn {
+    padding: 1.5em 3.1em;
+    border: none;
+    border-radius: 7px;
+    font-size: 0.8em;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    color: #fff;
+    background-color: $color-highlight;
+    box-shadow: 2px 2px 25px -7px $color-primary;
+    cursor: pointer;
+
+    &:active {
+      transform: scale(0.97);
+    }
+  }
+}
+
+/* ----- Seller Section ----- */
+.seller-info {
+  margin-top: 2em;
+  padding: 1em;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ----- Global ----- */
+body {
+  font-family: "Raleway", sans-serif;
+  background-color: #f5f5f5;
+}
+
+h1, h2 {
+  color: #4c4c4c;
+}
+
+h3 {
+  font-size: 0.7em;
+  letter-spacing: 1.2px;
+  color: #a6a6a6;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* ----- Product Section ----- */
+.product-details {
+  display: grid;
+  grid-template-columns: 0.9fr 1fr;
+  margin: auto;
+  padding: 2.5em 0;
+  max-width: 900px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ----- Photo Section ----- */
+.photo-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  border-radius: 6px;
+  box-shadow: 4px 4px 25px -2px rgba(0, 0, 0, 0.3);
+}
+
+
+.photo-main .controls {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px; /* Adjust the padding as needed */
+  box-sizing: border-box;
+}
+
+
+.photo-main .controls i {
+  cursor: pointer;
+}
+
+.photo-main .controls i:hover {
+  color: #ff3f40;
+}
+
+.photo-album {
+  height: 20%;
+  padding: 0.7em 1em;
+  border-radius: 0 0 6px 6px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo-album ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo-album li {
+  width: 55px;
+  height: 55px;
+  padding: 7px;
+  border: 1px solid #a6a6a6;
+  border-radius: 3px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.photo-album li:last-child {
+  margin-right: 0;
+}
+
+.photo-album li img {
+  width: 100%;
+  height: 100%;
+}
+
+/* ----- Informations Section ----- */
+.product__info {
+  padding: 0 2em;
+}
+
+.buy--btn {
+  padding: 1.5em 3.1em;
+  border: none;
+  border-radius: 7px;
+  font-size: 0.8em;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  color: #fff;
+  background-color: #ff3f40;
+  box-shadow: 2px 2px 25px -7px #4c4c4c;
+  cursor: pointer;
+}
+
+.buy--btn:active {
+  transform: scale(0.97);
+}
+
+/* ----- Seller Section ----- */
+.seller-info {
+  margin-top: 2em;
+  padding: 1em;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+  .spaced-lines {
+      line-height: 2.5; /* Adjust this value to increase or decrease spacing */
+    }
+  </style>
+
+</style>
+<h1>Product Details</h1>
+<div class="product-details">
+  <div class="product__photo">
+    <div class="photo-container">
+      <div class="photo-main">
+        <div class="controls">
+        
+  <i class="material-icons prev-btn">&#x25C0;</i>
+  <i class="material-icons next-btn">&#x25B6;</i>
+
+        </div>
+        {{#each product.images}}
+          
+        <div class="image-slide">
+          <img src="/uploads/{{this}}" alt="{{product.productname}}">
+        </div>
+        
+        {{/each}}
+      </div>
+      <div class="photo-album">
+        <ul>
+          {{#each product.images}}
+          <li><img src="/uploads/{{this}}" alt="{{product.productname}}"></li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="product__info">
+    <div class="title">
+      <h2 class="spaced-lines">{{product.productname}}</h2>
+    </div>
+    
+    <p class="spaced-lines">{{product.productdescription}}</p>
+    <p class="spaced-lines">Category: {{product.productcatogery}}</p>
+    <p class="spaced-lines">Type: {{product.producttype}}</p>
+    <p class="spaced-lines">Comment: {{product.comment}}</p>
+    <p class="spaced-lines">Minimum Bid Increment: ₹{{product.minimum_bid_increment}}</p>
+    <p class="spaced-lines">Highest Bid: ₹<span id="highestBid">{{product.highestBid}}</span></p>
+    <p class="spaced-lines">Minimum Bid Amount: {{product.startingBid}}</p>
+
+    {{#if (isUpcomingAuction product.auctionStartTime)}}
+    <p class="spaced-lines">Auction starts: {{formatAuctionStartTime product.auctionStartTime}}</p>
+    {{else if (isLiveAuction product.auctionStartTime product.auctionEndTime)}}
+    <p class="spaced-lines">Auction ends: <span id="auctionEndCountdown">Loading...</span></p>
+    {{else}}
+    <p class="spaced-lines">Auction ended: {{formatAuctionEndTime product.auctionEndTime}}</p>
+    {{/if}}
+
+    <div class="bidding-container">
+      <input type="number" id="bidAmount" min="{{product.startingBid}}" step="{{product.minimum_bid_increment}}" required />
+      <button id="placeBidBtn" class="buy--btn">Place Bid</button>
+      <div id="bidStatus"></div>
+    </div>
+  </div>
+</div>
+
+<h2>About the Seller</h2>
+<div class="seller-info">
+  <p><strong>Name:</strong> {{seller.firstName}} {{seller.lastName}}</p>
+  <p><strong>Email:</strong> {{seller.email}}</p>
+  <p><strong>Phone:</strong> {{seller.phone}}</p>
+  <p><strong>Address:</strong> {{seller.address}}</p>
+  <p><strong>Bio:</strong> {{seller.bio}}</p>
+</div>
+<script>
+ const imageSlides = document.querySelectorAll('.image-slide');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+let currentSlide = 0;
+
+function showSlide(n) {
+  imageSlides.forEach((slide, index) => {
+    slide.style.display = index === n ? 'block' : 'none';
+  });
+}
+
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % imageSlides.length;
+  showSlide(currentSlide);
+}
+
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + imageSlides.length) % imageSlides.length;
+  showSlide(currentSlide);
+}
+
+showSlide(currentSlide);
+prevBtn.addEventListener('click', prevSlide);
+nextBtn.addEventListener('click', nextSlide);
+
+// Place Bid Functionality
+const placeBidBtn = document.getElementById('placeBidBtn');
+const bidStatusDiv = document.getElementById('bidStatus');
+
+placeBidBtn.addEventListener('click', async () => {
+  const bidAmount = document.getElementById('bidAmount').value;
+  const productId = '{{product._id}}'; // Replace with the actual product ID
+
+  try {
+    const response = await fetch(`/bid/${productId}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ bidAmount })
+    });
+
+    if (response.ok) {
+      const highestBid = parseFloat(bidAmount); // Convert bid amount to float
+      document.getElementById('highestBid').textContent = highestBid; // Update highest bid display
+      bidStatusDiv.textContent = 'Bid placed successfully';
+      bidStatusDiv.style.color = 'green'; // Set color to green for success message
+    } else {
+      const errorMessage = await response.text();
+      bidStatusDiv.textContent = errorMessage;
+      bidStatusDiv.style.color = 'red'; // Set color to red for error message
+    }
+  } catch (err) {
+    bidStatusDiv.textContent = 'Error placing bid';
+    bidStatusDiv.style.color = 'red'; // Set color to red for error message
+    console.error(err);
+  }
+});
+
+
+// Countdown Timer
+const formatAuctionEndTime = (dateString) => {
+  const date = new Date(dateString);
+  const options = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    hour12: true,
+  };
+  return date.toLocaleString('en-US', options);
+};
+
+// Get the auction start and end times
+const auctionStartTime = new Date('{{product.auctionStartTime}}');
+const auctionEndTime = new Date('{{product.auctionEndTime}}');
+
+// Function to update the countdown timer
+function updateCountdown() {
+  const now = new Date().getTime();
+  const distance = auctionEndTime - now;
+
+  if (distance <= 0) {
+    document.getElementById('auctionEndCountdown').textContent = 'Auction has ended';
+    clearInterval(countdownInterval);
+    return;
+  }
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  const countdownString = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  document.getElementById('auctionEndCountdown').textContent = countdownString;
+}
+
+// Check if the auction has started
+if (new Date() >= auctionStartTime) {
+  // Start the countdown timer for the auction end time
+  updateCountdown();
+  const countdownInterval = setInterval(updateCountdown, 1000);
+}
+</script>

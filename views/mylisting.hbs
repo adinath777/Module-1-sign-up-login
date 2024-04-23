@@ -1,0 +1,189 @@
+<script>
+  // In countdown.js
+function updateCountdown(countdownElement) {
+  const endTime = countdownElement.dataset.endtime;
+  const now = Math.floor(Date.now() / 1000);
+  const timeRemaining = endTime - now;
+
+  if (timeRemaining <= 0) {
+    countdownElement.textContent = 'Auction Ended';
+    return;
+  }
+
+  const days = Math.floor(timeRemaining / (60 * 60 * 24));
+  const hours = Math.floor((timeRemaining % (60 * 60 * 24)) / (60 * 60));
+  const minutes = Math.floor((timeRemaining % (60 * 60)) / 60);
+  const seconds = Math.floor(timeRemaining % 60);
+
+  const formattedTime = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  countdownElement.textContent = formattedTime;
+}
+
+function initializeCountdowns() {
+  const countdownElements = document.querySelectorAll('.countdown');
+  countdownElements.forEach((countdownElement) => {
+    const endTime = countdownElement.dataset.endtime;
+    const startTime = countdownElement.dataset.starttime; // Add this line
+
+    // Check if the current time is greater than or equal to the auction start time
+    const currentTime = Math.floor(Date.now() / 1000);
+    if (currentTime >= startTime) {
+      updateCountdown(countdownElement);
+      setInterval(() => {
+        updateCountdown(countdownElement);
+      }, 1000);
+    }
+  });
+}
+document.addEventListener('DOMContentLoaded', initializeCountdowns);
+</script>
+
+<style>
+  /* Reset default browser margins and paddings */
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
+
+  h1 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .table-container {
+    flex: 1;
+    overflow-y: auto; /* Add scroll bar if content overflows vertically */
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .table th,
+  .table td {
+    padding: 12px;
+    text-align: left;
+    border-top: 1px solid #dee2e6;
+  }
+
+  .table th {
+    background-color: #f8f9fa;
+    color: #333;
+    font-weight: 600;
+  }
+
+  .table tbody tr:hover {
+    background-color: #bdb9b9;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+
+  .btn:hover {
+    color: #fff;
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+
+  .table-image td {
+    position: relative;
+  }
+
+  .table-image img {
+    max-width: 100px;
+    max-height: 100px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .table-image::after {
+    content: attr(alt);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .table-image:hover::after {
+    opacity: 1;
+  }
+</style>
+
+<div class="table-container">
+  <h1>My Products</h1>
+  {{#if products}}
+  <table class="table table-image" id="product-table">
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Category</th>
+        <th>Type</th>
+        <th>Image</th>
+        <th>Starting Bid</th>
+        <th>Current Highest Bid</th>
+        <th>Minimum Bid Increment</th>
+        <th>Auction Start</th>
+        <th>Auction Ends</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each products}}
+      <tr>
+        <td>{{productname}}</td>
+        <td>{{productcatogery}}</td>
+        <td>{{producttype}}</td>
+        <td class="table-image">
+          <img src="/uploads/{{images.[0]}}" alt="{{productname}}">
+        </td>
+        <td>₹{{startingBid}}</td>
+        <td>₹{{highestBid}}</td>
+        <td>₹{{minimum_bid_increment}}</td>
+        <td>{{formatAuctionStartTime auctionStartTime}}</td>
+        <td>
+  <span class="countdown" data-endtime="{{formatAuctionEndTimestamp auctionEndTime}}" data-starttime="{{formatAuctionStartTimestamp auctionStartTime}}">Loading...</span>
+</td>
+        <td>
+          <form action="/deleteproduct/{{_id}}" method="POST">
+            <button class="btn btn-danger" type="submit">Delete</button>
+          </form>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+  {{else}}
+  <p>No products found.</p>
+  {{/if}}
+</div>

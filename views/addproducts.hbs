@@ -1,0 +1,196 @@
+<style>
+  .addproduct {
+    margin-left: 660px;
+    margin-bottom: 100px;
+  }
+</style>
+<link
+  href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+  rel="stylesheet"
+  id="bootstrap-css"
+/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<form
+  class="form-horizontal"
+  method="POST"
+  action="/addproducts"
+  enctype="multipart/form-data"
+>
+  <fieldset>
+    <!-- Form Name -->
+    <legend>PRODUCTS</legend>
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="product_id">PRODUCT ID</label>
+      <div class="col-md-4">
+        <input
+          id="product_id"
+          name="product_id"
+          placeholder="PRODUCT ID"
+          class="form-control input-md"
+          required=""
+          type="text"
+        />
+      </div>
+    </div>
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="product_name"
+        >PRODUCT NAME</label
+      >
+      <div class="col-md-4">
+        <input
+          id="product_name"
+          name="product_name"
+          placeholder="PRODUCT NAME"
+          class="form-control input-md"
+          required=""
+          type="text"
+        />
+      </div>
+    </div>
+    <!-- Text input-->
+    <!-- Textarea -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="product_description"
+        >PRODUCT DESCRIPTION</label
+      >
+      <div class="col-md-4">
+        <textarea
+          class="form-control"
+          id="product_description"
+          name="product_description"
+        ></textarea>
+      </div>
+    </div>
+    <!-- Select Basic -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="product_category"
+        >PRODUCT CATEGORY</label
+      >
+      <div class="col-md-4">
+        <select id="product_category" name="product_category" class="form-control">
+          <option>--Select--</option>
+          <option>Grade-A</option>
+          <option>Grade-B</option>
+          <option>Grade-C</option>
+          <option>Grade-D</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="product_type">TYPE</label>
+      <div class="col-md-4">
+        <select id="product_type" name="product_type" class="form-control">
+          <option>--Select--</option>
+          <option>Vehicle</option>
+          <option>Autoparts</option>
+          <option>Electronics</option>
+          <option>Others</option>
+        </select>
+      </div>
+    </div>
+    <!-- Text input-->
+   
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="comment">COMMENT</label>
+      <div class="col-md-4">
+        <input
+          id="comment"
+          name="comment"
+          placeholder="COMMENT"
+          class="form-control input-md"
+          required=""
+          type="text"
+        />
+      </div>
+    </div>
+    <!-- Minimum Bid Amount -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="starting_bid"
+        >starting Bid</label
+      >
+      <div class="col-md-4">
+        <input
+          id="starting_bid"
+          name="starting_bid"
+          placeholder="Minimum Bid Amount"
+          class="form-control input-md"
+          required=""
+          type="number"
+          min="0"
+          step="0.01"
+        />
+      </div>
+    </div>
+    <!-- Minimum Bid Increment -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="minimum_bid_increment"
+        >Minimum Bid Increment</label
+      >
+      <div class="col-md-4">
+        <input
+          id="minimum_bid_increment"
+          name="minimum_bid_increment"
+          placeholder="Minimum Bid Increment"
+          class="form-control input-md"
+          required=""
+          type="number"
+          min="0.01"
+          step="0.01"
+        />
+      </div>
+    </div>
+
+    <!-- Auction Start Time -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="auction_start_time"
+    >Auction Start Time</label
+  >
+  <div class="col-md-4">
+    <input
+      id="auction_start_time"
+      name="auction_start_time"
+      placeholder="Auction Start Time"
+      class="form-control input-md"
+      required=""
+      type="datetime-local"
+    />
+  </div>
+</div>
+    <!-- Auction Duration -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="auction_duration"
+        >Auction Duration (in hours)</label
+      >
+      <div class="col-md-4">
+        <input
+          id="auction_duration"
+          name="auction_duration"
+          placeholder="Auction Duration (in hours)"
+          class="form-control input-md"
+          required=""
+          type="number"
+          min="1"
+        />
+      </div>
+    </div>
+    <!--File Button -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="filebutton">main_image</label>
+      <label for="files">Product Images (up to 3):</label>
+      <input
+        type="file"
+        id="files"
+        name="files"
+        multiple
+        accept="image/*"
+      />
+      <button class="addproduct" type="submit">Add Product</button>
+    </div>
+  </fieldset>
+</form>

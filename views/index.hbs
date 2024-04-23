@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+  <head>
+    <title>Ecobid</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <!-- Stylesheets-->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Poppins:300,400,500">
+    <link rel="stylesheet" href="/bootstrap.css">
+    <link rel="stylesheet" href="/fonts.css">
+    <link rel="stylesheet" href="/style.css">
+    <!--[if lt IE 10]>
+    <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+     <style>
+        /* Product Card */
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product-image {
+    display: block;
+    overflow: hidden;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.product-img {
+    width: 100%;
+    height: 200px; /* Adjust the height as needed */
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-img:hover {
+    transform: scale(1.1);
+}
+
+.product-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.product-description {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+    </style>
+
+  </head>
+  <body>
+    {{!-- <div class="preloader">
+      <div class="preloader-body">
+        <div class="cssload-container"><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+    </div> --}}
+     <div class="page">
+    \<!-- Page Header-->
+      <header class="section page-header">
+        <!-- RD Navbar-->
+        <div class="rd-navbar-wrap rd-navbar-modern-wrap">
+          <nav class="rd-navbar rd-navbar-modern" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-md-layout="rd-navbar-fixed" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-fixed" data-xl-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-lg-stick-up-offset="46px" data-xl-stick-up-offset="46px" data-xxl-stick-up-offset="70px" data-lg-stick-up="true" data-xl-stick-up="true" data-xxl-stick-up="true">
+            <div class="rd-navbar-main-outer">
+              <div class="rd-navbar-main">
+                <!-- RD Navbar Panel-->
+                <div class="rd-navbar-panel">
+                  <!-- RD Navbar Toggle-->
+                  <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                  <!-- RD Navbar Brand-->
+                  <div class="rd-navbar-brand"><a class="brand" href="/index"><img src="imagesused/mu/logo.jpeg " alt="" width="196" height="47"/></a></div>
+                </div>
+                <div class="rd-navbar-main-element">
+                  <div class="rd-navbar-nav-wrap">
+              
+                    <!-- RD Navbar Nav-->
+                    <ul class="rd-navbar-nav">
+                      <li class="rd-nav-item active"><a class="rd-nav-link" href="/index">Home</a>
+                      </li>
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="/login">Login</a>
+                      </li>
+                      
+                    
+                      <li class="rd-nav-item"><a class="rd-nav-link" href="/signup">Sign Up</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="rd-navbar-project-hamburger" data-multitoggle=".rd-navbar-main" data-multitoggle-blur=".rd-navbar-wrap" data-multitoggle-isolate>
+                    <div class="project-hamburger"><span class="project-hamburger-arrow-top"></span><span class="project-hamburger-arrow-center"></span><span class="project-hamburger-arrow-bottom"></span></div>
+                    <div class="project-hamburger-2"><span class="project-hamburger-arrow"></span><span class="project-hamburger-arrow"></span><span class="project-hamburger-arrow"></span>
+                    </div>
+                    <div class="project-close"><span></span><span></span></div>
+                  </div>
+                </div>
+                <div class="rd-navbar-project rd-navbar-modern-project">
+                  <div class="rd-navbar-project-modern-header">
+                    <h4 class="rd-navbar-project-modern-title">Get in Touch</h4>
+                    <div class="rd-navbar-project-hamburger" data-multitoggle=".rd-navbar-main" data-multitoggle-blur=".rd-navbar-wrap" data-multitoggle-isolate>
+                      <div class="project-close"><span></span><span></span></div>
+                    </div>
+                  </div>
+                  <div class="rd-navbar-project-content rd-navbar-modern-project-content">
+                    <div>
+                      <p>We are always ready to provide you good quality products . Contact us to find out how we can help you.</p>
+                      <div class="heading-6 subtitle">Our Contacts</div>
+                      <div class="row row-10 gutters-10">
+                        <div class="col-12"><img src="imagesused/mu/logo.jpeg" alt="" width="394" height="255"/>
+                        </div>
+                      </div>
+                      <ul class="rd-navbar-modern-contacts">
+                        <li>
+                          <div class="unit unit-spacing-sm">
+                            <div class="unit-left"><span class="icon fa fa-phone"></span></div>
+                            <div class="unit-body"><a class="link-phone" href="tel:#">+91 7594833156</a></div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="unit unit-spacing-sm">
+                            <div class="unit-left"><span class="icon fa fa-location-arrow"></span></div>
+                            <div class="unit-body"><a class="link-location" href="#">Federal institute of science and technology angamali,Ernakulam</a></div>
+                          </div>
+                        </li>
+                        <li>
+                          <div class="unit unit-spacing-sm">
+                            <div class="unit-left"><span class="icon fa fa-envelope"></span></div>
+                            <div class="unit-body"><a class="link-email" href="mailto:#">mail@ecodib.com</a></div>
+                          </div>
+                        </li>
+                      </ul>
+                      <ul class="list-inline rd-navbar-modern-list-social">
+                        <li><a class="icon fa fa-facebook" href="#"></a></li>
+                        <li><a class="icon fa fa-twitter" href="#"></a></li>
+                        <li><a class="icon fa fa-google-plus" href="#"></a></li>
+                        <li><a class="icon fa fa-instagram" href="#"></a></li>
+                        <li><a class="icon fa fa-pinterest" href="#"></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <!-- Swiper-->
+      <section class="section swiper-container swiper-slider swiper-slider-modern" data-loop="true" data-autoplay="5000" data-simulate-touch="true" data-nav="true" data-slide-effect="fade">
+        <div class="swiper-wrapper text-left">
+          <div class="swiper-slide context-dark" data-slide-bg="https://static.vecteezy.com/system/resources/previews/026/152/034/non_2x/futuristic-super-sports-car-speed-ai-generated-photo.jpeg">
+            <div class="swiper-slide-caption">
+              <div class="container">
+                <div class="row justify-content-center justify-content-xxl-start">
+                  <div class="col-md-10 col-xxl-6">
+                    <div class="slider-modern-box">
+                      <h1 class="slider-modern-title"><span data-caption-animate="slideInDown" data-caption-delay="0">Welcome to Ecobid</span></h1>
+                      <p data-caption-animate="fadeInRight" data-caption-delay="400">Ecobid a perfect partner in auctioning.</p>
+                      <div class="oh button-wrap"><a class="button button-primary button-ujarak" href="/blog" data-caption-animate="slideInLeft" data-caption-delay="400">Read more</a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide context-dark" data-slide-bg="https://images.pexels.com/photos/120049/pexels-photo-120049.jpeg?cs=srgb&dl=pexels-mike-bird-120049.jpg&fm=jpg">
+            <div class="swiper-slide-caption">
+              <div class="container">
+                <div class="row justify-content-center justify-content-xxl-start">
+                  <div class="col-md-10 col-xxl-6">
+                    <div class="slider-modern-box">
+                      <h1 class="slider-modern-title"><span data-caption-animate="slideInLeft" data-caption-delay="0">Upcoming Auctions </span></h1>
+                      <p data-caption-animate="fadeInRight" data-caption-delay="400">Stay ahead of the curve and explore our upcoming auctions to plan your bidding strategy. Browse through a diverse array of upcoming events spanning various categories, including art, antiques, jewelry, and more.</p>
+                      <div class="oh button-wrap"><a class="button button-primary button-ujarak" href="/blog" data-caption-animate="slideInLeft" data-caption-delay="400">Read more</a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide" data-slide-bg="https://media.assets.ansira.net/websites/content/cblt-ms-gmps-en-us//0fee6aef37154b19ae7c9edd5d7adff1_3000x2000.jpg">
+            <div class="swiper-slide-caption">
+              <div class="container">
+                <div class="row justify-content-center justify-content-xxl-start">
+                  <div class="col-md-10 col-xxl-6">
+                    <div class="slider-modern-box">
+                      <h1 class="slider-modern-title"><span data-caption-animate="slideInDown" data-caption-delay="0">Featured auctions</span></h1>
+                      <p data-caption-animate="fadeInRight" data-caption-delay="400">Discover our handpicked selection of premier auctions featuring unique and high-value items. From rare collectibles to exquisite art pieces, our featured auctions showcase the best of what our platform has to offer. Bid on exclusive items and elevate your collection with treasures sought after by enthusiasts worldwide.</p>
+                      <div class="oh button-wrap"><a class="button button-primary button-ujarak" href="/blog" data-caption-animate="slideInUp" data-caption-delay="400">Read more</a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Swiper Navigation-->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <!-- Swiper Pagination-->
+        <div class="swiper-pagination swiper-pagination-style-2"></div>
+      </section>
+
+      <!-- Icons Ruby-->
+      <section class="section section-md bg-default section-top-image">
+        <div class="container">
+          <div class="row row-30 justify-content-center">
+            <div class="col-sm-6 col-lg-4 wow fadeInRight" data-wow-delay="0s">
+              <article class="box-icon-ruby">
+                <div class="unit box-icon-ruby-body flex-column flex-md-row text-md-left flex-lg-column align-items-center text-lg-center flex-xl-row text-xl-left">
+                  <div class="unit-left">
+                    <div class="box-icon-ruby-icon linearicons-leaf"></div>
+                  </div>
+                  <div class="unit-body">
+                    <h4 class="box-icon-ruby-title"><a href="#">Trustable</a></h4>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="col-sm-6 col-lg-4 wow fadeInRight" data-wow-delay=".1s">
+              <article class="box-icon-ruby">
+                <div class="unit box-icon-ruby-body flex-column flex-md-row text-md-left flex-lg-column align-items-center text-lg-center flex-xl-row text-xl-left">
+                  <div class="unit-left">
+                    <div class="box-icon-ruby-icon linearicons-shovel"></div>
+                  </div>
+                  <div class="unit-body">
+                    <h4 class="box-icon-ruby-title"><a href="#">Best choice</a></h4>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="col-sm-6 col-lg-4 wow fadeInRight" data-wow-delay=".2s">
+              <article class="box-icon-ruby">
+                <div class="unit box-icon-ruby-body flex-column flex-md-row text-md-left flex-lg-column align-items-center text-lg-center flex-xl-row text-xl-left">
+                  <div class="unit-left">
+                    <div class="box-icon-ruby-icon linearicons-sun"></div>
+                  </div>
+                  <div class="unit-body">
+                    <h4 class="box-icon-ruby-title"><a href="#">Dedicated Team</a></h4>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+    <!--live auctions -->
+    <section class="bg-light">
+  <div class="container py-5">
+    <div class="row text-center py-3">
+      <div class="col-lg-6 m-auto">
+        <h2 class="h2">Live Auctions</h2>
+        <p>Participate in our ongoing auctions and secure the best deals!</p>
+      </div>
+    </div>
+    <div class="row">
+      {{#each liveProducts}}
+      <div class="col-12 col-md-4 mb-4">
+        <div class="card h-100 product-card">
+          <a href="/product/{{this._id}}" class="product-image">
+            <img src="./uploads/{{this.images.[0]}}" class="card-img-top product-img" alt="{{this.productname}}">
+          </a>
+          <div class="card-body">
+            <ul class="list-unstyled d-flex justify-content-between">
+              <li>{{!-- Add rating stars here if needed --}}</li>
+              {{#if this.highestBid}}
+                <li class="text-muted text-right">Current Bid: ₹{{this.highestBid}}</li>
+              {{else}}
+                <li class="text-muted text-right">Current Bid: ₹{{this.startingBid}}</li>
+              {{/if}}
+            </ul>
+            <a href="/product/{{this._id}}" class="h2 text-decoration-none text-dark product-title">{{this.productname}}</a>
+            <p class="card-text product-description">{{this.productdescription}}</p>
+            <p class="text-muted">Auction End Time: {{formatAuctionEndTime this.auctionEndTime}}</p>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+
+
+
+
+    <!--upcoming auctions-->
+
+<section class="bg-light">
+    <div class="container py-5">
+        <div class="row text-center py-3">
+            <div class="col-lg-6 m-auto">
+                <h2 class="h2">Upcoming Auctions</h2>
+                <p>
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            {{#each upcomingProducts}}
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card h-100 product-card">
+                    <a href="/product/{{this._id}}" class="product-image">
+                        <img src="./uploads/{{this.images.[0]}}" class="card-img-top product-img" alt="{{this.productname}}">
+                    </a>
+                    <div class="card-body">
+                        <ul class="list-unstyled d-flex justify-content-between">
+                            <li>
+                                {{!-- Add rating stars here if needed --}}
+                            </li>
+                            <li class="text-muted text-right">Starting Bid: ₹{{this.startingBid}}</li>
+                        </ul>
+                        <a href="/product/{{this._id}}" class="h2 text-decoration-none text-dark product-title">{{this.productname}}</a>
+                        <p class="card-text product-description">{{this.productdescription}}</p>
+                        <p class="text-muted">
+                            Auction Start Time: {{formatAuctionStartTime this.auctionStartTime}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</section>
+
+
+
+
+      <!-- Section CTA 2-->
+      <section class="section text-center">
+        <div class="parallax-container" data-parallax-img="https://t4.ftcdn.net/jpg/04/13/10/87/360_F_413108797_bJDklqcnc86T5bC3GTJ2jx3QOQIStVHK.jpg">
+          <div class="parallax-content section-xl section-inset-custom-1 context-dark bg-overlay-40">
+            <div class="container">
+              <h2 class="oh font-weight-normal"><span class="d-inline-block wow slideInDown" data-wow-delay="0s">Our Approach</span></h2>
+              <p class="oh big text-width-large"><span class="d-inline-block wow slideInUp" data-wow-delay=".2s">An auction site facilitates the buying and selling of goods or services through a competitive bidding process. Sellers list items for auction, setting starting prices and durations for bidding. Buyers place bids, competing to secure items at the highest price they're willing to pay.</span></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+
+      <!-- About us-->
+      <section class="section">
+        <div class="parallax-container" data-parallax-img="https://asset.gecdesigns.com/img/background-templates/blushing-wavy-pink-blend-lines-background-template-1681464742024-cover.webp">
+          <div class="parallax-content section-xl context-dark bg-overlay-68">
+            <div class="container">
+              <div class="row row-lg row-50 justify-content-center border-classic border-classic-big">
+                <div class="col-sm-6 col-md-5 col-lg-3 wow fadeInLeft" data-wow-delay="0s">
+                  <div class="counter-creative">
+                    <div class="counter-creative-number"><span class="counter">0</span><span class="icon counter-creative-icon fl-bigmug-line-trophy55"></span>
+                    </div>
+                    <h6 class="counter-creative-title">Awards</h6>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-3 wow fadeInLeft" data-wow-delay=".1s">
+                  <div class="counter-creative">
+                    <div class="counter-creative-number"><span class="counter">2</span><span class="symbol">k</span><span class="icon counter-creative-icon fl-bigmug-line-up104"></span>
+                    </div>
+                    <h6 class="counter-creative-title">Products</h6>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-3 wow fadeInLeft" data-wow-delay=".2s">
+                  <div class="counter-creative">
+                    <div class="counter-creative-number"><span class="counter">50</span><span class="icon counter-creative-icon fl-bigmug-line-sun81"></span>
+                    </div>
+                    <h6 class="counter-creative-title">Happy Clients</h6>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-md-5 col-lg-3 wow fadeInLeft" data-wow-delay=".3s">
+                  <div class="counter-creative">
+                    <div class="counter-creative-number"><span class="counter">4</span><span class="icon counter-creative-icon fl-bigmug-line-user143"></span>
+                    </div>
+                    <h6 class="counter-creative-title">Categories</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+      <!-- Improve your interior with deco-->
+      <section class="section section-md bg-default section-top-image">
+        <div class="container">
+          <div class="oh h2-title">
+            <h2 class="wow slideInUp" data-wow-delay="0s">Our Gallery</h2>
+          </div>
+          <div class="row row-30" data-lightgallery="group">
+            <div class="col-sm-6 col-lg-4">
+              <div class="oh-desktop">
+                <!-- Thumbnail Classic-->
+                <article class="thumbnail thumbnail-mary thumbnail-sm wow slideInLeft" data-wow-delay="0s">
+                  <div class="thumbnail-mary-figure"><img src="https://trexplus.com/wp-content/uploads/2023/07/consistent-8gb-ram-3.png" alt="" width="370" height="303"/>
+                  </div>
+                  <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="https://rukminim2.flixcart.com/image/850/1000/xif0q/ram/u/u/r/gx-8gb-ddr3-1600-mhz-geonix-original-imaggh9mh6yfgxge.jpeg?q=20&crop=false" data-lightgallery="item"><img src="images/grid-gallery-1-370x303.jpg" alt="" width="370" height="303"/></a>
+                    <h4 class="thumbnail-mary-title"><a href="#">Rams</a></h4>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-4">
+              <div class="oh-desktop">
+                <!-- Thumbnail Classic-->
+                <article class="thumbnail thumbnail-mary thumbnail-sm wow slideInUp" data-wow-delay=".1s">
+                  <div class="thumbnail-mary-figure"><img src="https://rukminim2.flixcart.com/image/850/1000/k5si2kw0/cooler/m/a/r/hexagear-cpu-cooler-for-lga1150-1155-1156-i3-i5-i7-original-imafgwtdbfypgtmw.jpeg?q=90&crop=false" alt="" width="370" height="303"/>
+                  </div>
+                  <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="" data-lightgallery="item"><img src="https://images-cdn.ubuy.co.in/633b4eb25508da31412bd019-aresgame-cpu-air-cooler-for-intel-amd.jpg" alt="" width="370" height="303"/></a>
+                    <h4 class="thumbnail-mary-title"><a href="#">Cpu Fans</a></h4>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-4">
+              <div class="oh-desktop">
+                <!-- Thumbnail Classic-->
+                <article class="thumbnail thumbnail-mary thumbnail-sm wow slideInRight" data-wow-delay=".0s">
+                  <div class="thumbnail-mary-figure"><img src="https://pisces.bbystatic.com/image2/BestBuy_US/images/products/9422/9422103_sa.jpg" alt="" width="370" height="303"/>
+                  </div>
+                  <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="https://5.imimg.com/data5/SELLER/Default/2022/10/TA/CE/SX/146688959/group-spare-smartphone-batteries-isolated-white-background-d-illustration-151053166.jpg" data-lightgallery="item"><img src="images/grid-gallery-3-370x303.jpg" alt="" width="370" height="303"/></a>
+                    <h4 class="thumbnail-mary-title"><a href="#">Cells</a></h4>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-4">
+              <div class="oh-desktop">
+                <!-- Thumbnail Classic-->
+                <article class="thumbnail thumbnail-mary thumbnail-sm wow slideInUp" data-wow-delay=".1s">
+                  <div class="thumbnail-mary-figure"><img src="https://images.ctfassets.net/oxm6xkjolpbj/2oWEjXTuqIFylU79oaK2kf/287acd75de11f554ecb1d16063865efe/harley-davidson-eeTJKC_webuyanybike.webp" alt="" width="370" height="303"/>
+                  </div>
+                  <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="https://images.lifestyleasia.com/wp-content/uploads/2019/02/19233209/harley-davidson-livewire-electric-motorcycle-001.jpg" data-lightgallery="item"><img src="images/grid-gallery-4-370x303.jpg" alt="" width="370" height="303"/></a>
+                    <h4 class="thumbnail-mary-title"><a href="#">Bikes</a></h4>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-4">
+              <div class="oh-desktop">
+                <!-- Thumbnail Classic-->
+                <article class="thumbnail thumbnail-mary thumbnail-sm wow slideInLeft" data-wow-delay="0s">
+                  <div class="thumbnail-mary-figure"><img src="https://imgd.aeplcdn.com/370x208/n/cw/ec/130591/fronx-exterior-right-front-three-quarter-109.jpeg?isig=0&q=80" alt="" width="370" height="303"/>
+                  </div>
+                  <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-original-5-800x1200.jpg" data-lightgallery="item"><img src="images/grid-gallery-5-370x303.jpg" alt="" width="370" height="303"/></a>
+                    <h4 class="thumbnail-mary-title"><a href="#">Cars</a></h4>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-4">
+              <div class="oh-desktop">
+                <!-- Thumbnail Classic-->
+                <article class="thumbnail thumbnail-mary thumbnail-sm wow slideInDown" data-wow-delay=".1s">
+                  <div class="thumbnail-mary-figure"><img src="https://s3-prod-europe.autonews.com/s3fs-public/Alfa%20Romeo%2033%20Stradale%20front.jpg" alt="" width="370" height="303"/>
+                  </div>
+                  <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="https://assets.rebelmouse.io/media-library/1967-alfa-romeo-33-stradale-and-2023-alfa-romeo-33-stradale.jpg?id=50016648&width=1200&height=600&coordinates=0%2C332%2C0%2C332" data-lightgallery="item"><img src="images/grid-gallery-6-370x303.jpg" alt="" width="370" height="303"/></a>
+                    <h4 class="thumbnail-mary-title"><a href="#"> premium Cars</a></h4>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+<a class="section section-banner" href="" style="background-image: url(images/banner/background-03-1920x310.jpg); background-image: -webkit-image-set( url(images/banner/background-03-1920x310.jpg) 1x, url(images/banner/background-03-3840x620.jpg) 2x )"><img src="images/new logo.jpeg" srcset="" alt="" width="1600" height="310"></a>
+      <!-- Page Footer-->
+      <footer class="section footer-variant-2 footer-modern context-dark section-top-image section-top-image-dark">
+        <div class="footer-variant-2-content">
+          <div class="container">
+            <div class="row row-40 justify-content-between">
+              <div class="col-sm-6 col-lg-4 col-xl-3">
+                <div class="oh-desktop">
+                  <div class="wow slideInRight" data-wow-delay="0s">
+                    <div class="footer-brand"><a href="index.html"><img src="images/logo.jpeg" alt="" width="196" height="42"/></a></div>
+                    <p>Ecobid is a website which provides quality products to customers through auctioning.</p>
+                    <ul class="footer-contacts d-inline-block d-md-block">
+                      <li>
+                        <div class="unit unit-spacing-xs">
+                          <div class="unit-left"><span class="icon fa fa-phone"></span></div>
+                          <div class="unit-body"><a class="link-phone" href="tel:#">+91 7594833156</a></div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="unit unit-spacing-xs">
+                          <div class="unit-left"><span class="icon fa fa-clock-o"></span></div>
+                          <div class="unit-body">
+                            <p>Mon-Sat: 24*7</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="unit unit-spacing-xs">
+                          <div class="unit-left"><span class="icon fa fa-location-arrow"></span></div>
+                          <div class="unit-body"><a class="link-location" href="#">Federal institute of science and technology angamali,Ernakulam</a></div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-lg-4 col-xl-4">
+                <div class="oh-desktop">
+                  <div class="inset-top-18 wow slideInDown" data-wow-delay="0s">
+                    <h5>Newsletter</h5>
+                    <p>Join our email newsletter for news and tips.</p>
+                    <form class="rd-form rd-mailform" data-form-output="form-output-global" data-form-type="subscribe" method="post" action="bat/rd-mailform.php">
+                      <div class="form-wrap">
+                        <input class="form-input" id="subscribe-form-5-email" type="email" name="email" data-constraints="@Email @Required">
+                        <label class="form-label" for="subscribe-form-5-email">Enter Your E-mail</label>
+                      </div>
+                      <button class="button button-block button-white" type="submit">Subscribe</button>
+                    </form>
+                    <div class="group-lg group-middle">
+                      <p class="text-white">Follow Us</p>
+                      <div>
+                        <ul class="list-inline list-inline-sm footer-social-list-2">
+                          <li><a class="icon fa fa-facebook" href="#"></a></li>
+                          <li><a class="icon fa fa-twitter" href="#"></a></li>
+                          <li><a class="icon fa fa-google-plus" href="#"></a></li>
+                          <li><a class="icon fa fa-instagram" href="#"></a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-xl-3">
+                <div class="oh-desktop">
+                  <div class="inset-top-18 wow slideInLeft" data-wow-delay="0s">
+                    <h5>Gallery</h5>
+                    <div class="row row-10 gutters-10" data-lightgallery="group">
+                      <div class="col-6 col-sm-3 col-lg-6">
+                        <!-- Thumbnail Classic-->
+                        <article class="thumbnail thumbnail-mary">
+                          <div class="thumbnail-mary-figure"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_9ZnMXq8-XCM6EmFhAs-jrRHkBbKa3HbptCAVSsUUAQ&s" alt="" width="129" height="120"/>
+                          </div>
+                          <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-original-7-800x1200.jpg" data-lightgallery="item"><img src="images/gallery-image-1-129x120.jpg" alt="" width="129" height="120"/></a>
+                          </div>
+                        </article>
+                      </div>
+                      <div class="col-6 col-sm-3 col-lg-6">
+                        <!-- Thumbnail Classic-->
+                        <article class="thumbnail thumbnail-mary">
+                          <div class="thumbnail-mary-figure"><img src="https://cdn5.vectorstock.com/i/1000x1000/09/09/clean-world-vector-200909.jpg" alt="" width="129" height="120"/>
+                          </div>
+                          <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-original-8-1200x800.jpg" data-lightgallery="item"><img src="images/gallery-image-2-129x120.jpg" alt="" width="129" height="120"/></a>
+                          </div>
+                        </article>
+                      </div>
+                      <div class="col-6 col-sm-3 col-lg-6">
+                        <!-- Thumbnail Classic-->
+                        <article class="thumbnail thumbnail-mary">
+                          <div class="thumbnail-mary-figure"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYfp73b0Z6Giw6rDi1hcAXr7DcUcJXly4WfudK3i8wRw&s" alt="" width="129" height="120"/>
+                          </div>
+                          <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-original-9-800x1200.jpg" data-lightgallery="item"><img src="images/gallery-image-3-129x120.jpg" alt="" width="129" height="120"/></a>
+                          </div>
+                        </article>
+                      </div>
+                      <div class="col-6 col-sm-3 col-lg-6">
+                        <!-- Thumbnail Classic-->
+                        <article class="thumbnail thumbnail-mary">
+                          <div class="thumbnail-mary-figure"><img src="https://i.ytimg.com/vi/rKMUivNq7to/hqdefault.jpg" alt="" width="129" height="120"/>
+                          </div>
+                          <div class="thumbnail-mary-caption"><a class="icon fl-bigmug-line-zoom60" href="images/gallery-original-10-1200x800.jpg" data-lightgallery="item"><img src="images/gallery-image-4-129x120.jpg" alt="" width="129" height="120"/></a>
+                          </div>
+                        </article>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-variant-2-bottom-panel">
+          <div class="container">
+            <!-- Rights-->
+            <div class="group-sm group-sm-justify">
+              <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year"></span> <span>Ecobid</span>. All rights reserved
+              </p>
+
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- Global Mailform Output-->
+    <div class="snackbars" id="form-output-global"></div>
+    <!-- Javascript-->
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
+    <!-- coded by Ragnar-->
+  </body>
+</html>

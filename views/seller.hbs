@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        .navbar-inverse {
+            background: linear-gradient(to right, #05014d, #476bc7); /* Dark blue to light blue */
+            border: none; /* Remove border */
+        }
+
+        .navbar-brand,
+        .navbar-nav > li > a {
+            color: #fff; /* Set text color to white */
+        }
+
+        body {
+            position: relative;
+        }
+        #section1 {padding-top:50px;height:500px;color: hsl(0, 10%, 4%); }
+        #section2 {padding-top:50px;height:500px;color: hsl(0, 10%, 4%); }
+        #section3 {padding-top:50px;height:500px;color:hsl(0, 10%, 4%); }
+        #section41 {padding-top:50px;height:500px;color:hsl(0, 10%, 4%); }
+        #section42 {padding-top:50px;height:500px;color:hsl(0, 10%, 4%); }
+
+        .secondnav {
+            float: right;
+            padding-bottom: -40px;
+        }
+        .welcome{
+          text-align: center; /* Align text to the center */
+            margin-top: 50px; /* Add some top margin for spacing */
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid ">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Ecobid</a>
+    </div>
+    <div class="secondnav">
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="#section1">Categories</a></li>
+          <li><a href="#section2">About Us</a></li>
+          <li><a href="#section3">Services and Support</a></li>
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Learn More <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#section41">Seller</a></li>
+              <li><a href="#section42">Buyer</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>    
+
+<div  class="container-fluid ">
+  <h1 class="welcome">Welcome Seller</h1>
+
+<div id="section1" class="container-fluid ">
+  <h1>Categories</h1>
+  <p>Grade A: These are products with minimal use or damages.Also,these are tested for functionality and is still in perfect working condition.</p>
+  <p>Grade B: These are products that have been damaged,but is repairable or these are fairly used products but either can be repaired or brought back to working condition.</p>
+  <p>Grade C: These are products that have been damaged or used beyond repair,but these can be used to salvage working parts mainly which are still in working condition and is tested by us.</p>
+  <p>Grade D: These are products that are highly damaged and are unlikely to work.But these can be used to scrap and sell the product for its most basic material.</p>
+</div>
+<div id="section2" class="container-fluid">
+  <h1>About Us</h1>
+  <p>Introducing EcoBid, a groundbreaking online auction platform committed to environmental sustainability. Unlike conventional auction sites, EcoBid places a strong emphasis on promoting eco-friendly practices and products. Sellers are vetted for their adherence to sustainable manufacturing processes and ethical sourcing, ensuring that every item listed meets stringent environmental standards. Additionally, EcoBid offsets carbon emissions generated from shipping, further reducing its ecological footprint. With a user-friendly interface and a wide array of responsibly sourced goods, EcoBid empowers consumers to make environmentally conscious purchasing decisions while supporting sustainable businesses. Join EcoBid today and bid for a greener future!</p>
+</div>
+<div id="section3" class="container-fluid">
+  <h1>Services and Support</h1>
+  <p>At EcoBid, we prioritize not only environmental sustainability but also exceptional service and support for our valued customers. Our platform offers a seamless and user-friendly interface, making it easy for buyers and sellers alike to navigate and engage. With dedicated customer support representatives available around the clock, any inquiries or concerns are promptly addressed, ensuring a smooth auction experience. Moreover, EcoBid provides educational resources and guides on sustainable living and eco-friendly practices, empowering our community to make informed choices. Whether you're a buyer seeking responsibly sourced goods or a seller looking to showcase your environmentally friendly products, EcoBid is here to support you every step of the way. Join us in our mission to create a more sustainable future for generations to come.</p>
+</div>
+<div id="section41" class="container-fluid">
+  <h1>Learn:Seller</h1>
+  <p>Selling or auctioning your item on EcoBid is a breeze, designed to be both convenient and environmentally conscious. Simply create an account and list your item, ensuring to provide detailed information about its eco-friendly attributes. Our platform guides you through the process, allowing you to upload photos and describe your product's sustainable features. Set your starting price or choose to auction it to the highest bidder, all while knowing that EcoBid supports ethical and environmentally friendly commerce. Once listed, your item will be showcased to our community of eco-conscious buyers, giving it the visibility it deserves. With secure transactions and dedicated support, selling on EcoBid is not just a transaction—it's a commitment to a greener future. Join us today and let your sustainable products shine!</p>
+  
+</div>
+<div id="section42" class="container-fluid">
+  <h1>Learn:Buyer</h1>
+  <p>As a buyer on EcoBid, your journey towards eco-conscious shopping is both effortless and rewarding. Browse through our curated selection of environmentally friendly products, each vetted for their sustainable practices and ethical sourcing. With detailed product descriptions and high-quality images, you can make informed decisions that align with your values. Our platform ensures secure transactions and provides buyer protection, giving you peace of mind throughout the purchasing process. Should you have any questions or concerns, our dedicated customer support team is here to assist you every step of the way. Join the EcoBid community today and discover a world of sustainable shopping, where your purchases contribute to a brighter, greener future for all.!</p>
+  
+</div>
+</body>
+</html>

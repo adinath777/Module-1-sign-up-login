@@ -1,0 +1,122 @@
+<script>
+function updateCountdown(countdownElement) {
+  const endTime = countdownElement.dataset.endtime;
+  const now = Math.floor(Date.now() / 1000);
+  const timeRemaining = endTime - now;
+
+  if (timeRemaining <= 0) {
+    countdownElement.textContent = 'Auction Ended';
+    return;
+  }
+
+  const days = Math.floor(timeRemaining / (60 * 60 * 24));
+  const hours = Math.floor((timeRemaining % (60 * 60 * 24)) / (60 * 60));
+  const minutes = Math.floor((timeRemaining % (60 * 60)) / 60);
+  const seconds = Math.floor(timeRemaining % 60);
+
+  const formattedTime = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  countdownElement.textContent = formattedTime;
+}
+
+function initializeCountdowns() {
+  const countdownElements = document.querySelectorAll('.countdown');
+  countdownElements.forEach((countdownElement) => {
+    updateCountdown(countdownElement);
+    setInterval(() => {
+      updateCountdown(countdownElement);
+    }, 1000);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', initializeCountdowns);
+</script>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+
+  }
+
+  .heading {
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .table th,
+  .table td {
+    padding: 12px;
+    text-align: left;
+    border-top: 1px solid #dee2e6;
+  }
+
+  .table th {
+    background-color: #f8f9fa;
+    color: #333;
+    font-weight: 600;
+  }
+
+  .table tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+
+  .btn:hover {
+    color: #fff;
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+</style>
+
+
+<h1 class="heading">My Biddings</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Product Name</th>
+      <th>My Bid</th>
+      <th>Current Highest Bid</th>
+      <th>Auction End In</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each bids}}
+    <tr>
+      <td>{{this.productName}}</td>
+      <td>${{this.bidAmount}}</td>
+      <td>${{#if this.currentHighestBid}}{{this.currentHighestBid}}{{else}}-{{/if}}</td>
+      <td>
+  <span class="countdown" data-endtime="{{formatAuctionEndTimestamp this.auctionEndTime}}">Loading...</span>
+</td>
+      <td>
+        <a href="/product/{{this.productId}}" class="btn btn-primary">View Details</a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
