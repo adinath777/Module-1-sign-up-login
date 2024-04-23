@@ -1,0 +1,14 @@
+{
+    "builds": [
+      {
+        "src": "/**/*.hbs",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/"
+      }
+    ]
+  }
