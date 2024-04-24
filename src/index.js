@@ -3,7 +3,7 @@ const app=express()
 const path=require("path")
 const hbs=require("hbs")
 const session = require('express-session');//for knowning current login user
-const bcrypt = require('bcrypt'); // Import bcrypt for password hashing
+///const bcrypt = require('bcrypt'); // Import bcrypt for password hashing
 const { Collection } = require("mongoose")
 const cron = require('node-cron');//for all auctions check auction winner each minute
 const multer=require("multer")
@@ -279,11 +279,11 @@ app.get("/mylisting",isAuthenticated, async (req, res) => {
       }
       
        // Hash the password
-      const hashedPassword = await bcrypt.hash(password, 10);
+      //const hashedPassword = await bcrypt.hash(password, 10);
       
       // Create a new user if username and email are available
       const data = { name:name,
-        password:hashedPassword,
+        password:password,
         email: email,firstName:firstName,lastName:lastName,phone:phone,address:address,bio:bio };
       await Login.insertMany([data]);
   
@@ -294,7 +294,7 @@ app.get("/mylisting",isAuthenticated, async (req, res) => {
     }
   });
 
-app.post("/login", async (req, res) => {
+/*app.post("/login", async (req, res) => {
   try {
     const { name, password } = req.body;
     const user = await Login.findOne({ name : name });
@@ -319,7 +319,27 @@ app.post("/login", async (req, res) => {
      
   }
 });
+*/
 
+app.post("/login", async (req, res) => {
+  try {
+    const { name, password } = req.body;
+    const user = await Login.findOne({ name: name });
+    if (user) {
+      // Store username in the session
+      if (user.password === password) {
+        req.session.username = user.name;
+        res.render("sellorbuy", { username: user.name });
+      } else {
+        return res.render("login", { passError: "incorrect password" });
+      }
+    } else {
+      return res.render("login", { credentialError: "wrong credentials" });
+    }
+  } catch {
+    res.send("wrong ");
+  }
+});
 //to store image using multer
 var Storage = multer.diskStorage({
   destination: "./public/uploads/",
