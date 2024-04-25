@@ -17,6 +17,8 @@
     "prettier": "3.2.5"
   },
   "scripts": {
-    "dev": "node ./src/index.js"
+    "dev": "node ./src/index.js",
+    "build": "node ./src/index.js",
+    "start": "node ./src/index.js"
   }
 }
